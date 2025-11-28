@@ -1,0 +1,63 @@
+Window Service Application
+
+- Cho phép app chạy trên chính Windows session.
+- Service có thể tự động start khi máy tính khởi động.
+- Có thể dừng hoặc khởi động lại và không show bất kì giao diện gì cho người dùng.
+- Các lệnh điều khiển service: pausing, resuming, stopping hoặc có thể custom lệnh.
+
+Service Application vs Orther Visual Studio Application
+- Debug khác nhau,..
+
+Service Lifetime
+- Service cần được install và load vào Service Control Manager.
+- Khởi động bằng cách call Start() hoặc from Server Explorer
+- Start() sẽ gọi OnStart do người dùng định nghĩa và gọi bất kì đoạn code nào bạn đinh nghĩa trong đó.
+- Một service có thể tồn tại ở trạng thái này vô thời hạn chọn đến khi nó bị stopped, pause hoặc khi máy tính tắt.
+- Gọi sc.Status để in ra các trạng thái của Service: ServiceControllerStatus.Stopped, StopPending, PausePending, StartPending
+- Phải cấu hình ServiceState:
+
+	[DllImport("advapi32.dll", SetLastError = true)]
+	private static extern bool SetServiceStatus(System.IntPtr handle, ref ServiceStatus serviceStatus);
+	
+	public enum ServiceState
+	{
+		SERVICE_STOPPED = 0x00000001,
+		SERVICE_START_PENDING = 0x00000002,
+		SERVICE_STOP_PENDING = 0x00000003,
+		SERVICE_RUNNING = 0x00000004,
+		SERVICE_CONTINUE_PENDING = 0x00000005,
+		SERVICE_PAUSE_PENDING = 0x00000006,
+		SERVICE_PAUSED = 0x00000007,
+	}
+	
+	[StructLayout(LayoutKind.Sequential)]
+	
+	public struct ServiceStatus
+	{
+		public int dwServiceType;
+		public ServiceState dwCurrentState;
+		public int dwControlsAccepted;
+		public int dwWin32ExitCode;
+		public int dwServiceSpecificExitCode;
+		public int dwCheckPoint;
+		public int dwWaitHint;
+	};
+
+Defining Your Service's Behavior
+	Method	Override to
+	OnStart	Indicate what actions should be taken when your service starts running. You must write code in this procedure for your service to perform useful work.
+	OnPause	Indicate what should happen when your service is paused.
+	OnStop	Indicate what should happen when your service stops running.
+	OnContinue	Indicate what should happen when your service resumes normal functioning after being paused.
+	OnShutdown	Indicate what should happen just prior to your system shutting down, if your service is running at that time.
+	OnCustomCommand	Indicate what should happen when your service receives a custom command. For more information on custom commands, see MSDN online.
+	OnPowerEvent	Indicate how the service should respond when a power management event is received, such as a low battery or suspended operation.
+
+
+Debug trong Window Service
+
+
+
+
+
+

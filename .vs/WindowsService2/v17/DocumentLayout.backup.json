@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|c:\\users\\luuti\\source\\repos\\windowsservice2\\windowsservice2\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|solutionrelative:windowsservice2\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|c:\\users\\luuti\\source\\repos\\windowsservice2\\windowsservice2\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|solutionrelative:windowsservice2\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|c:\\users\\luuti\\source\\repos\\windowsservice2\\windowsservice2\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|solutionrelative:windowsservice2\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|c:\\users\\luuti\\source\\repos\\windowsservice2\\windowsservice2\\projectinstaller.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|solutionrelative:windowsservice2\\projectinstaller.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|c:\\users\\luuti\\source\\repos\\windowsservice2\\windowsservice2\\projectinstaller.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|solutionrelative:windowsservice2\\projectinstaller.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|c:\\users\\luuti\\source\\repos\\windowsservice2\\windowsservice2\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|solutionrelative:windowsservice2\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|c:\\users\\luuti\\source\\repos\\windowsservice2\\windowsservice2\\service1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|solutionrelative:windowsservice2\\service1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|c:\\users\\luuti\\source\\repos\\windowsservice2\\windowsservice2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DC1E13F-72DF-4ED7-B1C2-B7DB68696484}|WindowsService2\\WindowsService2.csproj|solutionrelative:windowsservice2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProjectInstaller.cs",
+              "DocumentMoniker": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\ProjectInstaller.cs",
+              "RelativeDocumentMoniker": "WindowsService2\\ProjectInstaller.cs",
+              "ToolTip": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\ProjectInstaller.cs",
+              "RelativeToolTip": "WindowsService2\\ProjectInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:30:33.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProjectInstaller.resx",
+              "DocumentMoniker": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\ProjectInstaller.resx",
+              "RelativeDocumentMoniker": "WindowsService2\\ProjectInstaller.resx",
+              "ToolTip": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\ProjectInstaller.resx",
+              "RelativeToolTip": "WindowsService2\\ProjectInstaller.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-11-28T14:30:27.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProjectInstaller.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\ProjectInstaller.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsService2\\ProjectInstaller.Designer.cs",
+              "ToolTip": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\ProjectInstaller.Designer.cs",
+              "RelativeToolTip": "WindowsService2\\ProjectInstaller.Designer.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:10:49.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProjectInstaller.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\ProjectInstaller.cs",
+              "RelativeDocumentMoniker": "WindowsService2\\ProjectInstaller.cs",
+              "ToolTip": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\ProjectInstaller.cs [Design]",
+              "RelativeToolTip": "WindowsService2\\ProjectInstaller.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:10:35.966Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Service1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\Service1.cs",
+              "RelativeDocumentMoniker": "WindowsService2\\Service1.cs",
+              "ToolTip": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\Service1.cs [Design]",
+              "RelativeToolTip": "WindowsService2\\Service1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:09:35.396Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Service1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\Service1.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsService2\\Service1.Designer.cs",
+              "ToolTip": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\Service1.Designer.cs",
+              "RelativeToolTip": "WindowsService2\\Service1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:09:06.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Service1.cs",
+              "DocumentMoniker": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\Service1.cs",
+              "RelativeDocumentMoniker": "WindowsService2\\Service1.cs",
+              "ToolTip": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\Service1.cs",
+              "RelativeToolTip": "WindowsService2\\Service1.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T13:58:45.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\Program.cs",
+              "RelativeDocumentMoniker": "WindowsService2\\Program.cs",
+              "ToolTip": "C:\\Users\\luuti\\source\\repos\\WindowsService2\\WindowsService2\\Program.cs",
+              "RelativeToolTip": "WindowsService2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:09:09.336Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

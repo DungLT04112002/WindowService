@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\Users\luuti\source\repos\WindowsService2\WindowsService2\bin\Debug\WindowsService2.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\luuti\source\repos\WindowsService2\WindowsService2\bin\Debug\WindowsService2.InstallLog
+   assemblypath = C:\Users\luuti\source\repos\WindowsService2\WindowsService2\bin\Debug\WindowsService2.exe
+Installing service Dinh_CD_Service...
+Service Dinh_CD_Service has been successfully installed.
+Creating EventLog source Dinh_CD_Service in log Application...
+Committing assembly 'C:\Users\luuti\source\repos\WindowsService2\WindowsService2\bin\Debug\WindowsService2.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\luuti\source\repos\WindowsService2\WindowsService2\bin\Debug\WindowsService2.InstallLog
+   assemblypath = C:\Users\luuti\source\repos\WindowsService2\WindowsService2\bin\Debug\WindowsService2.exe

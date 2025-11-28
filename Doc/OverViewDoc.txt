@@ -1,0 +1,136 @@
+WINDOWS SERVICE APPLICATION – TỔNG HỢP TOÀN THƯ
+
+1. Giới thiệu
+- Windows Service là ứng dụng chạy nền trên Windows, không có giao diện người dùng (UI).
+- Cho phép chạy trên chính Windows session, có thể tự động start khi máy khởi động tùy vào start up type.
+- Có khả năng dừng, khởi động lại, tạm dừng (pause) hoặc tiếp tục (resume) theo lệnh.
+- Hỗ trợ lệnh điều khiển custom từ Service Control Manager (SCM) hoặc code.
+
+2. Service Application vs. Other Visual Studio Applications
+- Service cần được install trước khi chạy; không thể debug trực tiếp bằng F5/F11.
+- Cần attach debugger vào process service để debug.
+- Yêu cầu tạo installation components để đăng ký service với SCM.
+- Chạy trong window station riêng, tách biệt với interactive station của user.
+- Không thể hiển thị UI; mọi lỗi và thông báo cần ghi vào EventLog.
+- Quyền chạy service có thể khác quyền user; cần lựa chọn tài khoản chạy (Local System, Network Service hoặc user tùy chọn).
+
+3. Service Lifetime
+- Bước 1: Install và load service vào SCM.
+- Bước 2: Start service bằng phương thức Start() hoặc từ Server Explorer.
+- Start() sẽ gọi OnStart() do người dùng định nghĩa, thực hiện các code cần thiết.
+- Service có thể tồn tại trong trạng thái Running vô thời hạn, cho đến khi bị Stop, Pause hoặc khi máy tắt.
+- Trạng thái service có thể kiểm tra bằng ServiceController.Status:
+	public enum ServiceControllerStatus
+	{
+		//
+		// Summary:
+		//     The service continue is pending. This corresponds to the Win32 SERVICE_CONTINUE_PENDING
+		//     constant, which is defined as 0x00000005.
+		ContinuePending = 5,
+		//
+		// Summary:
+		//     The service is paused. This corresponds to the Win32 SERVICE_PAUSED constant,
+		//     which is defined as 0x00000007.
+		Paused = 7,
+		//
+		// Summary:
+		//     The service pause is pending. This corresponds to the Win32 SERVICE_PAUSE_PENDING
+		//     constant, which is defined as 0x00000006.
+		PausePending = 6,
+		//
+		// Summary:
+		//     The service is running. This corresponds to the Win32 SERVICE_RUNNING constant,
+		//     which is defined as 0x00000004.
+		Running = 4,
+		//
+		// Summary:
+		//     The service is starting. This corresponds to the Win32 SERVICE_START_PENDING
+		//     constant, which is defined as 0x00000002.
+		StartPending = 2,
+		//
+		// Summary:
+		//     The service is not running. This corresponds to the Win32 SERVICE_STOPPED constant,
+		//     which is defined as 0x00000001.
+		Stopped = 1,
+		//
+		// Summary:
+		//     The service is stopping. This corresponds to the Win32 SERVICE_STOP_PENDING constant,
+		//     which is defined as 0x00000003.
+		StopPending = 3
+	}
+- Service cũng có thể báo các trạng thái pending (StartPending, StopPending, PausePending, ContinuePending) để SCM biết lệnh đã gửi nhưng chưa thực hiện.
+
+4. Cấu hình ServiceState
+- Dùng P/Invoke để cập nhật trạng thái với SCM:
+
+[DllImport("advapi32.dll", SetLastError = true)]
+private static extern bool SetServiceStatus(System.IntPtr handle, ref ServiceStatus serviceStatus);
+
+public enum ServiceState
+{
+    SERVICE_STOPPED = 0x00000001,
+    SERVICE_START_PENDING = 0x00000002,
+    SERVICE_STOP_PENDING = 0x00000003,
+    SERVICE_RUNNING = 0x00000004,
+    SERVICE_CONTINUE_PENDING = 0x00000005,
+    SERVICE_PAUSE_PENDING = 0x00000006,
+    SERVICE_PAUSED = 0x00000007,
+}
+
+[StructLayout(LayoutKind.Sequential)]
+public struct ServiceStatus
+{
+    public int dwServiceType;
+    public ServiceState dwCurrentState;
+    public int dwControlsAccepted;
+    public int dwWin32ExitCode;
+    public int dwServiceSpecificExitCode;
+    public int dwCheckPoint;
+    public int dwWaitHint;
+}
+
+5. Định nghĩa hành vi Service (Override Methods)
+- OnStart(): thực hiện các hành động khi service bắt đầu chạy.
+- OnPause(): xử lý khi service bị tạm dừng.
+- OnStop(): xử lý khi service dừng.
+- OnContinue(): xử lý khi service tiếp tục sau pause.
+- OnShutdown(): xử lý khi hệ thống chuẩn bị shutdown.
+- OnCustomCommand(): xử lý khi service nhận lệnh tùy chỉnh.
+- OnPowerEvent(): xử lý các sự kiện quản lý năng lượng (low battery, suspend, resume).
+
+6. EventLog
+- Service không có UI → dùng EventLog để ghi thông tin, lỗi, cảnh báo.
+- Phải tạo EventSource trước khi ghi log, ví dụ "MyServiceSource".
+- Ghi log: eventLog.WriteEntry("Message", EventLogEntryType.Information/Error/Warning)
+- Người quản trị có thể đọc log qua Event Viewer (Windows Logs → Application).
+
+7. Debug Windows Service
+- Cần mở terminal với quyền admin.
+- Di chuyển đến thư mục chứa service exe.
+- Chạy:
+  C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe WindowsService1.exe
+- Để debug, attach Visual Studio vào process service.
+- Tránh dùng UI popup để debug; dùng EventLog hoặc console logging riêng khi test bằng console mode.
+
+8. Cập nhật và Reinstall Service
+- Thay đổi code service → cần stop service và uninstall trước khi install lại.
+- Có thể dùng:
+  sc stop <ServiceName>
+  sc delete <ServiceName>
+  hoặc InstallUtil /u MyService.exe
+- Chỉ thay đổi config → restart service là đủ.
+
+9. Windows Station & Desktop
+- Service chạy ở non-interactive station (Session 0), tách biệt với user.
+- Không thể hiển thị dialog hoặc MessageBox.
+- Desktop chứa window objects, message queue; service không có quyền tương tác trực tiếp.
+- Tương tác với user phải qua app UI riêng, Named Pipe, REST API, hoặc EventLog.
+
+10. Summary
+- Windows Service: app nền, quản lý bởi SCM, không UI, chạy trước login, có trạng thái rõ ràng (Running, Paused, Stopped + pending).
+- Quản lý trạng thái bằng ServiceStatus & SetServiceStatus.
+- Hành vi service: OnStart, OnStop, OnPause, OnContinue, OnShutdown, OnCustomCommand, OnPowerEvent.
+- Ghi log và debug: EventLog.
+- Update service: stop/uninstall → build → install → start.
+- Security context quan trọng: Local System vs user account.
+
